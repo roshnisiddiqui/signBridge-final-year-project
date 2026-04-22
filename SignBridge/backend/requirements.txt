@@ -1,0 +1,48 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  SignBridge — Python Dependencies                            ║
+# ║  Install: pip install -r requirements.txt                    ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+# ── Web Framework ────────────────────────────────────────────────
+# FastAPI: modern async Python web framework
+# Chosen over Flask because: async support, auto Swagger docs,
+# built-in WebSocket, 2-3x faster, better type safety
+fastapi==0.109.0
+
+# ASGI server to run FastAPI
+# uvicorn[standard] includes uvloop (faster event loop) + httptools
+uvicorn[standard]==0.27.0
+
+# WebSocket support for FastAPI
+websockets==12.0
+
+# Template engine (for serving frontend HTML with dynamic data)
+jinja2==3.1.3
+
+# Serve static files (CSS, JS, images)
+python-multipart==0.0.7
+
+# ── Computer Vision & ML ─────────────────────────────────────────
+# MediaPipe: Google's ML framework with pre-trained hand landmark model
+# This is the core ML component — no training required
+mediapipe==0.10.9
+
+# OpenCV: Image processing, frame decoding, drawing annotations
+# headless = no GUI dependencies (important for server deployment)
+opencv-python-headless==4.9.0.80
+
+# NumPy: Efficient array operations for image data
+numpy==1.26.3
+
+# ── Data & Utilities ─────────────────────────────────────────────
+# Pydantic: Data validation and serialization (used by FastAPI)
+pydantic==2.5.3
+
+# Pillow: Image manipulation (for generating sign reference images)
+Pillow==10.2.0
+
+# ── Production (optional, for deployment) ────────────────────────
+gunicorn==21.2.0     # Production WSGI server
+redis==5.0.1         # For production session storage
+sqlalchemy==2.0.25   # For production database
+alembic==1.13.1      # Database migrations
